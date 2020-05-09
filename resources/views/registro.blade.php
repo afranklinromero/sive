@@ -29,12 +29,13 @@ document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
               
                     <input data-toggle="collapse" class="form-check-input collapsed" type="radio" name="gridRadios" id="gridRadios1" value="option1"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                     <label class="form-check-label" for="gridRadios1">
-                    Viacha
+                    Viacha 
                     </label>
               
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
                     <input type="number" class="form-control" id="num1" name="num1" placeholder="Cantidad de Bolsas">
+                   
                   </div>
                 </div>
               </div>

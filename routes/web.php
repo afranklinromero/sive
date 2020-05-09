@@ -20,5 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/registro', 'HomeController@registro')->name('registro');
-Route::resource('precio', 'PrecioController');
+
+Route::resource('precios', 'PrecioController');
 

@@ -33,10 +33,10 @@
                         <a class="nav-link" href="index.php">INICIO <span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('precio.index') }}">PRECIOS</a>
+                        <a class="nav-link" href="{{ route('precios.index') }}">PRECIOS</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="precio.php">DEUDA</a>
+                        <a class="nav-link" href="precios.php">DEUDA</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="{{ route('registro') }}">REGISTRO</a>
@@ -45,9 +45,7 @@
                      <li class="nav-item">
                         <a class="nav-link" href="{{ route('registro') }}">REGISTRO</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{ route('precio.index') }}">PRECIOS</a>
-                      </li>
+                     
                     @endif
                @endif    
            </ul>
