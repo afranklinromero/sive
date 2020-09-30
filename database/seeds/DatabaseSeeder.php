@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,11 +12,29 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-       // La creación de datos de roles debe ejecutarse primero
-    $this->call(RoleTableSeeder::class);
-    // Los usuarios necesitarán los roles previamente generados
-    $this->call(UserTableSeeder::class);
-     // $this->call(UsersTableSeeder::class);
-     $this->call(PrecioTableSeeder::class);
-    }
+            $this->truncateTables([
+                'users',
+                'roles',
+                'role_user',
+                'clientes',
+                'userclientes',
+                'productos',
+                'precioproductos',
+            ]);
+            $this->call(UserTableSeeder::class);
+            $this->call(RoleTableSeeder::class);
+            $this->call(RoleuserSeeder::class);
+            $this->call(ClienteSeeder::class);
+            $this->call(UserclienteSeeder::class);
+            $this->call(ProductoSeeder::class);
+            $this->call(PrecioproductoSeeder::class);
+        }
+    
+        protected function truncateTables(array $tables){
+            DB::Statement('SET FOREIGN_KEY_CHECKS = 0;');
+            foreach($tables as $table){
+                DB::table($table)->truncate();
+            }
+            DB::Statement('SET FOREIGN_KEY_CHECKS = 1;');
+        }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePreciosTable extends Migration
+class CreateProductosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreatePreciosTable extends Migration
      */
     public function up()
     {
-        Schema::create('precios', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->float('viacha')->nullable();
-            $table->float('yazul')->nullable();
-            $table->float('yrojo')->nullable();
-
+        Schema::create('productos', function (Blueprint $table) {
+            $table->engine = 'InnoDB'; //para db relacional
+            
+            $table->bigIncrements('id');
+            $table->string('nombre', 64);
+            $table->float('preciocompra');
+            $table->tinyInteger('estado');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreatePreciosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('precios');
+        Schema::dropIfExists('productos');
     }
 }
